@@ -1,0 +1,9 @@
+#Chapter 1 - Setup
+This chapter discusses hardware and software needed to be able to do the exercises and projects presented in this book. The best way to learn is by experimenting and trying real things by yourself as opposed to just reading theoretical background material.
+
+Quite a large number of different components are required to complete all the projects presented in this book. If your budget is limited so will you be  able to do many of the projects with just a handful of components where each one is not really expensive either.
+
+##1.1 Mandatory Equipment
+The things listed in the following sections is stuff that you really should have to get the most out of this book.
+
+##1.
