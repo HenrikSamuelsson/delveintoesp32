@@ -1,9 +1,10 @@
-#Chapter 1 - Setup
+# Chapter 1 - Setup
 This chapter discusses hardware and software needed to be able to do the exercises and projects presented in this book. The best way to learn is by experimenting and trying real things by yourself as opposed to just reading theoretical background material.
 
 Quite a large number of different components are required to complete all the projects presented in this book. If your budget is limited so will you be  able to do many of the projects with just a handful of components where each one is not really expensive either.
 
-##1.1 Mandatory Equipment
-The things listed in the following sections is stuff that you really should have to get the most out of this book.
+## 1.1 Mandatory Equipment
+The things listed in the following sections are the bare minimum things that you really should have to get the most out of this book.
 
-##1.
+## 1.1.2
+A computer running Linux, Windows or macOS is needed to build the software for the ESP32. The bulk of the projects in this book have been developed and tested on a computer running Ubuntu 16.04, so this is the prefered operating system. Most things should work under other operating system but the ride might not be as smooth. Hardware specs on the computer are really not high. Should have two USB ports, and some free disk space for software development tools, that is about it.
