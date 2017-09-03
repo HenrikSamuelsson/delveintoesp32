@@ -6,5 +6,12 @@ Quite a large number of different components are required to complete all the pr
 ## 1.1 Mandatory Equipment
 The things listed in the following sections are the bare minimum things that you really should have to get the most out of this book.
 
-## 1.1.2
-A computer running Linux, Windows or macOS is needed to build the software for the ESP32. The bulk of the projects in this book have been developed and tested on a computer running Ubuntu 16.04, so this is the prefered operating system. Most things should work under other operating system but the ride might not be as smooth. Hardware specs on the computer are really not high. Should have two USB ports, and some free disk space for software development tools, that is about it.
+## 1.1.2 Computer
+A computer running Linux, Windows or macOS is needed to build the software for the ESP32. The bulk of the projects in this book have been developed and tested on a computer running Ubuntu 16.04, so this is the prefered operating system. Most things should work under other operating system but the ride might not be as smooth.
+
+Hardware specs on the computer are really not high. Computer to be used should have two USB ports, and some free disk space for software development tools, that is about it.
+
+## 1.1.3 ESP32 Development Kit
+A development board with a ESP32-WROOM module. Espressif, the company behind the ESP32, have released a devolopment board named ESP32-DevKitC that can be bought for about $15. Do a web search and you should find several vendors that sell it on for example Ebay, Amazon or maybe your own favorite electronics component vendor have it in stock.
+
+There are also various variants of the official development board. These can primarly be found on Asian online market places. This can be a way to save a little money as they are often cheaper but there will usually be a few weeks of waiting for the order to arrive.
