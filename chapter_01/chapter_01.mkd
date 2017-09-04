@@ -1,5 +1,5 @@
 # Chapter 1 - Setup
-This chapter discusses hardware and software needed to be able to do the exercises and projects presented in this book. The best way to learn is by experimenting and trying real things by yourself as opposed to just reading theoretical background material.
+This chapter discusses hardware and software needed to be able to do the exercises and projects presented in this book. The best way to learn is by experimenting and trying real things by yourself as opposed to just reading theoretical background material or watching videos.
 
 Quite a large number of different components are required to complete all the projects presented in this book. If your budget is limited so will you be  able to do many of the projects with just a handful of components where each one is not really expensive either.
 
@@ -12,6 +12,8 @@ A computer running Linux, Windows or macOS is needed to build the software for t
 Hardware specs on the computer are really not high. Computer to be used should have two USB ports, and some free disk space for software development tools, that is about it.
 
 ## 1.1.3 ESP32 Development Kit
-A development board with a ESP32-WROOM module. Espressif, the company behind the ESP32, have released a devolopment board named ESP32-DevKitC that can be bought for about $15. Do a web search and you should find several vendors that sell it on for example Ebay, Amazon or maybe your own favorite electronics component vendor have it in stock.
+A development board with a ESP32-WROOM module is considered mandatory to be able to test the programs that you will create. Espressif, the company behind the ESP32, have released a devolopment board named ESP32-DevKitC that can be bought for about $15. Do a web search and you should find several vendors that sell it on for example Ebay, Amazon or maybe your own favorite electronics component vendor have it in stock.
 
-There are also various variants of the official development board. These can primarly be found on Asian online market places. This can be a way to save a little money as they are often cheaper but there will usually be a few weeks of waiting for the order to arrive.
+There are also various variants of the official development board developed by third parties. These can primarly be found on Asian online market places. This can be a way to save a little money as they are often cheaper but there will usually be a few weeks of waiting for the order to arrive.
+
+An USB cable is needed to connect the development board and your computer. Exact cable needed dependends on the computer and what development board being used. USB A to micro USB is probably the most common but check the ports of your computer and the connector on the development kit to make sure.
