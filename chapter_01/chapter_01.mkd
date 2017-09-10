@@ -12,8 +12,13 @@ A computer running Linux, Windows or macOS is needed to build the software for t
 Hardware specs on the computer are really not high. Computer to be used should have two USB ports, and some free disk space for software development tools, that is about it.
 
 ## 1.1.3 ESP32 Development Kit
-A development board with a ESP32-WROOM module is considered mandatory to be able to test the programs that you will create. Espressif, the company behind the ESP32, have released a devolopment board named ESP32-DevKitC that can be bought for about $15. Do a web search and you should find several vendors that sell it on for example Ebay, Amazon or maybe your own favorite electronics component vendor have it in stock.
+A development board with an ESP32-WROOM module is considered mandatory to be able to test the programs that you will create. Espressif, the company behind the ESP32, have released a devolopment board named ESP32-DevKitC that can be bought for about $15. Do a web search and you should find several vendors that sell it on for example Ebay, Amazon or maybe your own favorite electronics component vendor have it in stock.
 
 There are also various variants of the official development board developed by third parties. These can primarly be found on Asian online market places. This can be a way to save a little money as they are often cheaper but there will usually be a few weeks of waiting for the order to arrive.
 
-An USB cable is needed to connect the development board and your computer. Exact cable needed dependends on the computer and what development board being used. USB A to micro USB is probably the most common but check the ports of your computer and the connector on the development kit to make sure.
+An USB cable is needed to connect the development board and your computer. Exact cable needed dependends on the computer and what development board being used. USB A to micro USB is probably the type that you need. Check the ports of your computer and the connector on the development kit before buying.
+
+## 1.1.4 Electronics
+Many of the projects requires various electronic components to be connected togheter. A fast way to hook up components is by using so called bread boards. Bread board comes in various colors and sizes see below picture for an example.
+
+![Image](bread_board.png?raw=true)
