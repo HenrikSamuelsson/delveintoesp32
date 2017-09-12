@@ -1,3 +1,7 @@
+/**
+ * @file main.c
+ * @brief Toggles an output pin at a regular interval.
+ */
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/gpio.h"
@@ -6,12 +10,12 @@
 
 void app_main(void)
 {
-    gpio_set_direction(GPIO_NUM_4, GPIO_MODE_OUTPUT);
-    int level = 0;
+	bool pinLevel = true;
+	gpio_set_direction(GPIO_NUM_4, GPIO_MODE_OUTPUT);
     while (true)
     {
-        gpio_set_level(GPIO_NUM_4, level);
-        level = !level;
+        gpio_set_level(GPIO_NUM_4, pinLevel);
+        pinLevel = !pinLevel;
         vTaskDelay(BLINK_INTERVAL / portTICK_PERIOD_MS);
     }
 }
