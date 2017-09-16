@@ -1,2 +1,6 @@
 /projects/blink/build/*
-
+/latex/delveintoesp32.log
+/latex/delveintoesp32.aux
+/latex/delveintoesp32.pdf
+/latex/delveintoesp32.synctex.gz
+/latex/delveintoesp32.out
