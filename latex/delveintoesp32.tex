@@ -120,11 +120,11 @@ When we are done writing a part of our code and shall test it so will we first b
 
 \subsection{Software Installation}
 Exact way to install the software needed to be able to build for the ESP32 depends on what operating system your development computer is running.
-Only installation instructions for Ubuntu Linux is provided in this book as an illustrative example. Instructions for other operating systems can be found by searching on-line for ''Espressif ESP32 installations instructions``.
-Even if your computer runs another operating system than Ubuntu Linux so is it a good idea to glance through the instructions in the following sections since there are some general useful information that is valid for all installations regardless of the underlying operating system.
+Only installation instructions for Ubuntu Linux is provided in this book as an illustrative example. Instructions for all supported operating systems including Ubuntu Linux can be found by searching on-line for ''Espressif ESP32 installations instructions``.
+Even if you choose to follow the software installations instructions that can be found on-line so is it a good idea to glance through the instructions in the sections that now follow since there are, aside from the Ubuntu specific instructions, some general useful information that is valid for all installations regardless of the underlying operating system.
 
-\subsection{General Software Packages Installation}
-There are as discussed a number of software packages that are needed to be able to program an ESP32. Make sure that all of these are available by opening a terminal window and execute the following command. 
+\subsection{General Software Packages Installation on Ubuntu Linux}
+There are, as already discussed, a number of software packages that are needed to be able to program an ESP32. Make sure that all of these are available by opening a terminal window and execute the following command. 
 
 \marginnote{There shall not be any line breaks in the command that you type in. The line break and tab in the command are just present for layout reasons to be able to fit the command on the page of this book.}
 	
@@ -132,7 +132,7 @@ There are as discussed a number of software packages that are needed to be able 
 sudo apt-get install git wget make flex bison libncurses5-dev gperf python python-serial
 \end{lstlisting}
 
-Expected result is that the apt-get utility that is a package management command line program, that is used to work with Ubuntu's Advanced Packaging Tool library, should perform installation of some new software packages.
+Expected result is that the apt-get utility, a package management command line program that handles Ubuntu's Advanced Packaging Tool library, should perform installation of some new software packages.
  
 Check the resulting output in the terminal for eventual problems occurring during the installation process. Should one or more packages fail to install so should you try to fix this before continuing with the next installation steps. Not having all the packages will most likely cause problems later on. Search for information on-line or post a question at the ESP32 forum that is located at www.esp32.com to resolve eventual issues.
 
@@ -142,7 +142,7 @@ Check the resulting output in the terminal for eventual problems occurring durin
 
 The official development framework for the ESP32 is called ESP-IDF. More or less all projects in this book will use functionality from this framework. ESP-IDF can be retrieved from GitHub and it will now be explained how to download a clone of the framework to your development computer.
 
-Open a terminal and move to a location where you want to store the code to be downloaded. You can for example create a folder called esp that will hold various sub folders for the purpose of storing ESP-IDF as well as your own projects for the ESP32.
+Open a terminal and move to a location where you want to store the code to be downloaded. It is assumed that you will create a folder named esp that will hold various sub folders for the purpose of storing ESP-IDF files. This esp folder will also later on be the parent folder for the tool chain and example project as well as your own projects for the ESP32.
 
 \marginnote{The ESP-IDF is under active development and it could be so that there is a later release available by the time you are reading this. You can choose to get this later release instead of version 2.1. Benefits of this would be to get bug fixes and extended functionality. The down side to choosing a later release is that it may not be one-hundred percent backwards-compatible so it could break some of the code presented in this book.}
 
@@ -158,7 +158,7 @@ git submodule update --init --recursive
 Expected result from these commands are the following. A new folder called esp-idf-v2.1 is created on your computer. This folder should hold various documents and folders such as for example components, docs, examples, make. The checkout command and the submodule update command ensures that the version of the ESP-IDF framework is in the same exact state as it was when release 2.1 was made.
 You should now stop reading and instead write down a note of the version of ESP-IDF that you are using and where it is located on your computer. You will need this information in the next section but also later on in this book when we will setup more software tools.
 
-\subsection{ESP-IDF Environment Path Setup}
+\subsection{ESP-IDF Environment Path Setup os Ubuntu Linux}
 
 \marginnote{As before so will it only be explained here how to setup things on Ubuntu Linux. Search on-line for ''Setup Path to ESP-IDF`` to get information on how to proceed on other operating systems}
 
@@ -184,7 +184,7 @@ printenv IDF_PATH
 
 Expected result is that the path to the location of the ESP-IDF files is printed out in the terminal.
 
-\subsection{Tool Chain}
+\subsection{Tool Chain Setup on Ubuntu Linux}
 \marginnote{In software development, a tool chain is a set of programming tools that are used to create a software product, which is typically another computer program or a set of related programs. In general, the tools forming a tool chain are executed consecutively so the output or resulting environment state of each tool becomes the input or starting environment for the next one.
 	
 Toolchain, in Wikipedia. Retrieved September 17, 2017. }
@@ -199,6 +199,12 @@ It is possible for more advanced user to build and tweak the tool chain by thems
 
 The computer used to develop the projects presented in this book runs Ubuntu Linux. Searching on line for ''tool chain ESP32 download`` or ''xtensa-esp32-elf`` and clicking around a bit on the hits for these searches will eventually lead to a download page of the correct type of tool chain.
 
-TODO add some instructions on installing the tool chain
+The tool chain comes as in a packed file and we choose to extract the content in a sub folder to our already existing folder called esp. See figure~\ref{fig:tool_chain_folder_shadowed} that visualizes the chosen file structure.
+
+\begin{figure}
+	\includegraphics{tool_chain_folder_shadowed.png}
+	\caption[ $n$.][6pt]{The folder xtensa-esp32-elf holds the tool chain. Both this folder and the esp-idf folder have been placed in a folder called esp.}
+	\label{fig:tool_chain_folder_shadowed}
+\end{figure}
 
 \end{document}
