@@ -195,16 +195,32 @@ The nice people at Espressif have provided us with a ready made tool chain for t
 
 It is possible for more advanced user to build and tweak the tool chain by themselves. But there is also pre-built tool chains that comes as a binary file. The latter is recommended for beginners that just want to get started as fast as possible.
 
-\marginnote{Direct links where to find different things are generally not provided in this book. The reasoning behind this is that the exact link addresses tends to change a lot and since this book comes as printed version so would soon many of the links be broken. An attempt is instead made to present relevant search terms to the reader that enables finding of the wanted resources.}
+\marginnote{Direct links are generally not provided in this book. The reasoning behind this is link addresses tends to change frequently and many of the links would soon be broken. An attempt is instead made to present relevant search terms that should enable the reader to find the wanted resources.}
 
 The computer used to develop the projects presented in this book runs Ubuntu Linux. Searching on line for ''tool chain ESP32 download`` or ''xtensa-esp32-elf`` and clicking around a bit on the hits for these searches will eventually lead to a download page of the correct type of tool chain.
 
-The tool chain comes as in a packed file and we choose to extract the content in a sub folder to our already existing folder called esp. See figure~\ref{fig:tool_chain_folder_shadowed} that visualizes the chosen file structure.
+The tool chain comes as in a packed file and we choose to extract the content in a sub folder to our already existing folder called esp. The extraction process will produce a folder called xtensa-esp32-elf in which the tool chain is located. See figure~\ref{fig:tool_chain_folder_shadowed} that visualizes the chosen file structure.
 
 \begin{figure}
 	\includegraphics{tool_chain_folder_shadowed.png}
 	\caption[ $n$.][6pt]{The folder xtensa-esp32-elf holds the tool chain. Both this folder and the esp-idf folder have been placed in a folder called esp.}
 	\label{fig:tool_chain_folder_shadowed}
 \end{figure}
+
+\marginnote{If you have /bin/bash set as login shell, and both .bash\_profile and .profile exists so should you edit .bash\_profile instead.}
+
+The development system needs to be aware of the chosen location of the tool chain. This is achieved by adding information to an environment variable called PATH. Open up the ~/.profile file and add the following line.
+
+\begin{lstlisting}
+export PATH="$PATH:$HOME/esp/xtensa-esp32-elf/bin"
+\end{lstlisting}
+
+This command will append the location of the ESP32 tool chain to the environment variable called PATH. Log out and log in again for the command to take effect. When logged in again so can the result of the change be verified by executing the following command in a terminal.
+
+\begin{lstlisting}
+printenv PATH
+\end{lstlisting}
+
+Expected result of the print environment command is that the path of the tool chain location is found at the end of the displayed string.
 
 \end{document}
