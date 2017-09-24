@@ -26,7 +26,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -46,7 +46,7 @@
      id="namedview6838"
      showgrid="false"
      inkscape:zoom="2"
-     inkscape:cx="312.15889"
+     inkscape:cx="220.40889"
      inkscape:cy="31.486326"
      inkscape:window-x="49"
      inkscape:window-y="24"
@@ -61,8 +61,8 @@
   <g
      id="g18021"
      inkscape:export-filename="/home/henrik/esp/delveintoesp32/latex/bread_board.png"
-     inkscape:export-xdpi="192"
-     inkscape:export-ydpi="192">
+     inkscape:export-xdpi="600"
+     inkscape:export-ydpi="600">
     <g
        transform="translate(-1.4999995)"
        id="background">

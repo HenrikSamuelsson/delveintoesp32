@@ -112,7 +112,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="409.55671"
+     inkscape:cx="401.05671"
      inkscape:cy="520"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -146,7 +146,10 @@
        style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleOutL)"
        d="m 76.729167,160.73958 c 13.229173,0 13.229173,0 13.229173,0 v 0"
        id="path4935"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/henrik/esp/delveintoesp32/latex/software_anatomy.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -154,7 +157,10 @@
        y="171.37741"
        id="text821-6-2-1"
        inkscape:transform-center-y="2.5746653e-06"
-       inkscape:transform-center-x="-1.1221099"><tspan
+       inkscape:transform-center-x="-1.1221099"
+       inkscape:export-filename="/home/henrik/esp/delveintoesp32/latex/software_anatomy.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
          sodipodi:role="line"
          id="tspan819-7-9-2"
          x="78.365982"
@@ -173,13 +179,19 @@
        x="29.104164"
        y="154.125"
        ry="5.291667"
-       rx="5.2916617" />
+       rx="5.2916617"
+       inkscape:export-filename="/home/henrik/esp/delveintoesp32/latex/software_anatomy.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="35.421089"
        y="162.28058"
-       id="text821"><tspan
+       id="text821"
+       inkscape:export-filename="/home/henrik/esp/delveintoesp32/latex/software_anatomy.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
          sodipodi:role="line"
          id="tspan819"
          x="35.421089"
@@ -193,13 +205,19 @@
        x="29.104164"
        y="138.25"
        ry="5.291667"
-       rx="5.2916617" />
+       rx="5.2916617"
+       inkscape:export-filename="/home/henrik/esp/delveintoesp32/latex/software_anatomy.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="33.988625"
        y="146.44278"
-       id="text821-6"><tspan
+       id="text821-6"
+       inkscape:export-filename="/home/henrik/esp/delveintoesp32/latex/software_anatomy.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
          sodipodi:role="line"
          id="tspan819-7"
          x="33.988625"
@@ -213,13 +231,19 @@
        x="29.104164"
        y="170"
        ry="5.291667"
-       rx="5.2916617" />
+       rx="5.2916617"
+       inkscape:export-filename="/home/henrik/esp/delveintoesp32/latex/software_anatomy.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="33.668228"
        y="177.78247"
-       id="text821-3"><tspan
+       id="text821-3"
+       inkscape:export-filename="/home/henrik/esp/delveintoesp32/latex/software_anatomy.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
          sodipodi:role="line"
          id="tspan819-5"
          x="33.668228"
@@ -234,7 +258,10 @@
        y="60.854187"
        ry="5.291667"
        rx="5.2916617"
-       transform="rotate(-90)" />
+       transform="rotate(-90)"
+       inkscape:export-filename="/home/henrik/esp/delveintoesp32/latex/software_anatomy.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -242,7 +269,10 @@
        y="69.046967"
        id="text821-6-2-1-7"
        transform="rotate(-90)"
-       inkscape:transform-center-y="-1.1221136"><tspan
+       inkscape:transform-center-y="-1.1221136"
+       inkscape:export-filename="/home/henrik/esp/delveintoesp32/latex/software_anatomy.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
          sodipodi:role="line"
          id="tspan819-7-9-2-0"
          x="-169.74989"
@@ -277,7 +307,10 @@
        y="171.90657"
        id="text821-6-2-1-9"
        inkscape:transform-center-y="2.5746653e-06"
-       inkscape:transform-center-x="-1.1221099"><tspan
+       inkscape:transform-center-x="-1.1221099"
+       inkscape:export-filename="/home/henrik/esp/delveintoesp32/latex/software_anatomy.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
          sodipodi:role="line"
          id="tspan819-7-9-2-3"
          x="125.06493"
@@ -296,7 +329,10 @@
        x="95.25"
        y="154.125"
        ry="5.291667"
-       rx="5.2916617" />
+       rx="5.2916617"
+       inkscape:export-filename="/home/henrik/esp/delveintoesp32/latex/software_anatomy.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -304,7 +340,10 @@
        y="161.90747"
        id="text821-6-2-1-9-3"
        inkscape:transform-center-y="2.5746653e-06"
-       inkscape:transform-center-x="-1.1221099"><tspan
+       inkscape:transform-center-x="-1.1221099"
+       inkscape:export-filename="/home/henrik/esp/delveintoesp32/latex/software_anatomy.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
          sodipodi:role="line"
          id="tspan819-7-9-2-3-6"
          x="102.31075"
@@ -321,7 +360,10 @@
        id="path4935-3"
        inkscape:connector-curvature="0"
        inkscape:transform-center-x="-2.2837368"
-       inkscape:transform-center-y="-0.396875" />
+       inkscape:transform-center-y="-0.396875"
+       inkscape:export-filename="/home/henrik/esp/delveintoesp32/latex/software_anatomy.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.49999997;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect817-7-1"
@@ -330,7 +372,10 @@
        x="145.52083"
        y="154.125"
        ry="5.291667"
-       rx="5.2916617" />
+       rx="5.2916617"
+       inkscape:export-filename="/home/henrik/esp/delveintoesp32/latex/software_anatomy.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -338,7 +383,10 @@
        y="161.90747"
        id="text821-6-2-1-9-9"
        inkscape:transform-center-y="2.5746653e-06"
-       inkscape:transform-center-x="-1.1221099"><tspan
+       inkscape:transform-center-x="-1.1221099"
+       inkscape:export-filename="/home/henrik/esp/delveintoesp32/latex/software_anatomy.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
          sodipodi:role="line"
          id="tspan819-7-9-2-3-4"
          x="149.61464"
