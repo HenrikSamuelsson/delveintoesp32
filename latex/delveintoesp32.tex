@@ -24,16 +24,19 @@
 	% showframe,
 	paperwidth=8.5in,
 	paperheight=11in,
-	left=0.71in,
+	left=1.0in,
 	%right=0.45in,
 	top=0.61in,
 	%bottom=.5in,
-	textwidth=4.96in,
-	marginparsep=0.35in,
-	marginparwidth=1.77in,
+	textwidth=4.3in,
+	marginparsep=0.40in,
+	marginparwidth=1.90in,
 	includehead,
 	% The text width and height are calculated automatically.
 }
+
+\usepackage{csquotes}
+\usepackage[UKenglish,USenglish]{babel}
 
 \usepackage{url}
 
@@ -107,7 +110,7 @@ The following list summarizes some of the components that should be included in 
 \section{Software}\label{sec:software}
 
 The process of getting the ESP32 to run our own software depends on the steps and building blocks illustrated in figure~\ref{fig:software_anatomy}.
-
+But there is also pre-built tool chains that comes as a binary file. The latter is recommended for beginners that just want to get started as fast as possible.
 The very basic foundation of our software will be some packages that we must have on our development computer. On top op these packages so is there a library of ESP32 specific code provided by Espressif. This library is called Espressif Internet of Things Development Framework (ESP-IDF). This library abstracts away some of the hardware specific details and speeds up the development. The final piece of code that can be seen in figure~\ref{fig:software_anatomy} is labeled Our code and this will be project specific code written by us to make the ESP32 do what we want it to do.
 
 When we are done writing a part of our code and shall test it so will we first build a binary file, this is done by running programs and scripts from a set of tools refereed to as the tool chain. A binary file will be the result of an successful build. This binary shall finally be download to a ESP32 and if we have written to code correctly so will the ESP32 start executing the code and start to behave as we intended. 
@@ -125,11 +128,17 @@ Even if you choose to follow the software installations instructions that can be
 
 \subsection{General Software Packages Installation on Ubuntu Linux}
 There are, as already discussed, a number of software packages that are needed to be able to program an ESP32. Make sure that all of these are available by opening a terminal window and execute the following command. 
-
-\marginnote{There shall not be any line breaks in the command that you type in. The line break and tab in the command are just present for layout reasons to be able to fit the command on the page of this book.}
 	
 \begin{lstlisting}
-sudo apt-get install git wget make flex bison libncurses5-dev gperf python python-serial
+sudo apt-get install git
+sudo apt-get install wget
+sudo apt-get install make
+sudo apt-get install flex
+sudo apt-get install bison
+sudo apt-get install libncurses5-dev
+sudo apt-get install gperf
+sudo apt-get install python
+sudo apt-get install python-serial
 \end{lstlisting}
 
 Expected result is that the apt-get utility, a package management command line program that handles Ubuntu's Advanced Packaging Tool library, should perform installation of some new software packages.
@@ -138,25 +147,27 @@ Check the resulting output in the terminal for eventual problems occurring durin
 
 \subsection{ESP-IDF Retrieval}
 
-\marginnote{GitHub is a web-based Git or version control repository . It is mostly used for code. It offers all of the distributed version control and source cThe purpose of the tool chain is to combine the source code that we write with source code from others such as for example code fromode management functionality of Git as well as adding its own features.}
+\marginnote{GitHub is a web-based Git or version control repository . It is mostly used for code. It offers all of the distributed version control and source code management functionality of Git as well as adding its own features.}
 
-The official development framework for the ESP32 is called ESP-IDF. More or less all projects in this book will use functionality from this framework. ESP-IDF can be retrieved from GitHub and it will now be explained how to download a clone of the framework to your development computer.
+The official development framework for the ESP32 is called ESP-IDF. More or less all projects in this book will use functionality from this framework. ESP-IDF can be retrieved from GitHub and it will now be explained how to get a clone of the framework onto your development computer.
 
-Open a terminal and move to a location where you want to store the code to be downloaded. It is assumed that you will create a folder named esp that will hold various sub folders for the purpose of storing ESP-IDF files. This esp folder will also later on be the parent folder for the tool chain and example project as well as your own projects for the ESP32.
+Open a terminal and move to a location where you want to store the code for the framework. It is assumed that you will create a folder named esp that will hold various sub folders for the purpose of storing ESP-IDF files. This esp folder will also later on be the parent folder for the tool chain and example projects. You can also put your your own projects for the ESP32 in this folder if you want.
 
 \marginnote{The ESP-IDF is under active development and it could be so that there is a later release available by the time you are reading this. You can choose to get this later release instead of version 2.1. Benefits of this would be to get bug fixes and extended functionality. The down side to choosing a later release is that it may not be one-hundred percent backwards-compatible so it could break some of the code presented in this book.}
 
 The latest current release, at the time of writing, is version 2.1. To get this release, use the following commands in a terminal.
 
 \begin{lstlisting}
-git clone https://github.com/espressif/esp-idf.git esp-idf-v2.1
+git clone \
+https://github.com/espressif/esp-idf.git \
+esp-idf-v2.1
 cd esp-idf-v2.1/
 git checkout v2.1
 git submodule update --init --recursive
 \end{lstlisting}
 
 Expected result from these commands are the following. A new folder called esp-idf-v2.1 is created on your computer. This folder should hold various documents and folders such as for example components, docs, examples, make. The checkout command and the submodule update command ensures that the version of the ESP-IDF framework is in the same exact state as it was when release 2.1 was made.
-You should now stop reading and instead write down a note of the version of ESP-IDF that you are using and where it is located on your computer. You will need this information in the next section but also later on in this book when we will setup more software tools.
+You should now stop reading and instead write down a note of the version of ESP-IDF that you are using and where it is located on your computer. You will need this information in the next section and also later on in this book when we will setup more software tools.
 
 \subsection{ESP-IDF Environment Path Setup os Ubuntu Linux}
 
@@ -191,11 +202,11 @@ Toolchain, in Wikipedia. Retrieved September 17, 2017. }
 
 We have now got significant parts of the things that we need to be able to build our own software for the ESP32. Go back and have a look at figure~\ref{fig:software_anatomy} at page~\pageref{fig:software_anatomy} again. We have the packages and ESP-IDF now. But one of the things that are still missing is the tool chain.
 
-The nice people at Espressif have provided us with a ready made tool chain for the ESP32 that we can download for free. The exact tool chain to use is dependent on the operating system that your computer runs. This means that you shall navigate the Espressif installation instruction pages to find a tool chain for your particular operating system.
+The nice people at Espressif have provided us with a ready made tool chain for the ESP32 that we can download for free as a binary file. It is possible for more advanced user to build and tweak the tool chain by themselves. It is recommended for beginners that just want to get started as fast as possible to use the prebuilt version of the tool chain.
 
-It is possible for more advanced user to build and tweak the tool chain by themselves. But there is also pre-built tool chains that comes as a binary file. The latter is recommended for beginners that just want to get started as fast as possible.
+The exact tool chain to use is dependent on the operating system that your computer runs. This means that you shall navigate the Espressif installation instruction pages to find a tool chain for your particular operating system.
 
-\marginnote{Direct links are generally not provided in this book. The reasoning behind this is link addresses tends to change frequently and many of the links would soon be broken. An attempt is instead made to present relevant search terms that should enable the reader to find the wanted resources.}
+\marginnote{Direct links are generally not provided in this book. The reasoning behind this is link addresses tends to change frequently and many of the provided links would soon be broken. An attempt is instead made to present relevant search terms that should enable the reader to find the wanted resources.}
 
 The computer used to develop the projects presented in this book runs Ubuntu Linux. Searching on line for ''tool chain ESP32 download`` or ''xtensa-esp32-elf`` and clicking around a bit on the hits for these searches will eventually lead to a download page of the correct type of tool chain.
 
@@ -222,6 +233,11 @@ printenv PATH
 \end{lstlisting}
 
 Expected result of the print environment command is that the path of the tool chain location is found at the end of the displayed string.
+
+\subsection{Getting an Example Application}
+Lets go back and have another look at figure~\ref{fig:software_anatomy} at page~\pageref{fig:software_anatomy} that illustrates what is needed to be able to build an application for the ESP32. We have the packages, a copy of the ESP-IDF framework, and the tool chain by now. The only thing that is missing before we can test to build an application is some code that makes up the actual application.
+
+It is luckily so that there are plenty of complete example projects included in the copy of the ESP-IDF framework that we cloned previously to our computer. We will choose to test if the environment is setup correctly by building an simple application that will printout \textquote{Hello World!}.
 
 \chapter{Setting up Eclipse}
 
