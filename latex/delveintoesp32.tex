@@ -75,7 +75,7 @@ A development board with an ESP32-WROOM module is considered mandatory to be abl
 
 There are also various variants of the official development board developed by third parties. The cheapest ones can primarily be found on Chinese on-line market places. This can be a way to save a little money but there will usually be a few weeks of waiting for the order to arrive if you do not live China.
 frame=tb,
-An USB cable is needed to connect the development board and your computer. Exact cable needed depends on the computer and what development board being used. USB A to micro USB is probably the type that you need. Check the ports of your computer and the connector on the development kit before buying.\marginnote{Note that the build system does not support spaces in the path to the ESP-IDF.}
+An USB cable is needed to connect the development board and your computer. Exact cable needed depends on the computer and what development board being used. USB A to micro USB is probably the type that you need. Check the ports of your computer and the connector on the development kit before buying.
 
 \subsection{Bread Board}
 Many of the projects requires various electronic components to be connected together. A fast way to hook up components is by using so called bread boards. Bread board comes in various colors and sizes see below picture for an example of a board with 830 connection points.
@@ -86,7 +86,7 @@ Many of the projects requires various electronic components to be connected toge
 	\label{fig:bread_board}
 \end{figure}
 
-The ESP32-DevKitC is bread board friendly and can be plugged\marginnote{Note that the build system does not support spaces in the path to the ESP-IDF.} in to the bread board directly. But it is fairly wide and will cover many connection points that we will want to have free to be able to connect other things. The solution is to have multiple boards connected together by the same principle used as when laying a jigsaw puzzle. Notice the three small knobs on the bottom of the board in the picture these will fit holes located at backside of the the top of the board. The board you want to have should be of this type that can be connected together with other boards. So search for a ''830 bread board`` that is specified to be able to be connected together and buy two off these boards. 
+The ESP32-DevKitC is bread board friendly and can be plugged in to the bread board directly. But it is fairly wide and will cover many connection points that we will want to have free to be able to connect other things. The solution is to have multiple boards connected together by the same principle used as when laying a jigsaw puzzle. Notice the three small knobs on the bottom of the board in the picture these will fit holes located at backside of the the top of the board. The board you want to have should be of this type that can be connected together with other boards. So search for a ''830 bread board`` that is specified to be able to be connected together and buy two off these boards. 
 
 An alternative is to search for ''1660 bread board`` and you will get hits were two bread boards are already mounted together for you on a metal plate.
 
@@ -117,7 +117,10 @@ When we are done writing a part of our code and shall test it so will we first b
 
 \begin{figure}
 	\includegraphics[scale=1.0]{software_anatomy.png}
-	\caption[Software development $n$.][6pt]{Overview of the software blocks and steps needed to get an application running on the ESP32.}
+	\caption[Software development $n$.][6pt]{
+	Overview of the software blocks and steps needed to get an application
+	running on the ESP32.
+	}
 	\label{fig:software_anatomy}
 \end{figure}
 
@@ -199,6 +202,7 @@ printenv IDF_PATH
 Expected result is that the path to the location of the ESP-IDF files is printed out in the terminal.
 
 \subsection{Tool Chain Setup on Ubuntu Linux}
+
 \marginnote{In software development, a tool chain is a set of programming tools that are used to create a software product, which is typically another computer program or a set of related programs. In general, the tools forming a tool chain are executed consecutively so the output or resulting environment state of each tool becomes the input or starting environment for the next one.
 	
 Toolchain, in Wikipedia. Retrieved September 17, 2017. }
@@ -211,7 +215,7 @@ The exact tool chain to use is dependent on the operating system that your compu
 
 \marginnote{Direct links are generally not provided in this book. The reasoning behind this is link addresses tends to change frequently and many of the provided links would soon be broken. An attempt is instead made to present relevant search terms that should enable the reader to find the wanted resources.}
 
-The computer used to develop the projects presented in this book runs Ubuntu Linux. Searching on line for ''tool chain ESP32 download`` or ''xtensa-esp32-elf`` and clicking around a bit on the hits for these searches will eventually lead to a download page of the correct type of tool chain.
+The computer used to develop the projects presented in this book runs Ubuntu Linux. Searching on line for \textquote{tool chain ESP32 download} or \textquote{xtensa-esp32-elf} and clicking around a bit on the hits for these searches will eventually lead to a download page of the correct type of tool chain.
 
 The tool chain comes as in a packed file and we choose to extract the content in a sub folder to our already existing folder called esp. The extraction process will produce a folder called xtensa-esp32-elf in which the tool chain is located. See figure~\ref{fig:tool_chain_folder_shadowed} that visualizes the chosen file structure.
 
@@ -253,9 +257,21 @@ cd ~/esp
 cp -r $IDF_PATH/examples/get-started/hello_world .
 \end{lstlisting}
 
+\subsection{Serial Port Identification}
+
+\marginnote{
+A serial port is a communication interface through which information transfers in or out one bit at a time. Throughout most of the history of personal computers, data was transferred through serial ports to devices such as modems, terminals, and various peripherals.
+
+While such interfaces as Ethernet and USB send data as a serial stream, the term "serial port" usually identifies hardware more or less compliant to the RS-232 standard.
+
+Serial port, in Wikipedia. Retrieved October 14, 2017. 
+}
+
 The ESP development board will when connected to a your development computer show up as a serial port. This serial port will be used for flashing the program that we will build into the ESP32. The same port will additionally be used by the ESP32 to send a Hello World! message to our computer, once all the build steps are completed that is.
 
-We will need to know the name of the serial port. The name will be different depending on type of operating system used. The name can also vary from time to time depending on if you have several USB device connected that show up as serial ports. 
+We will need to know the name of the serial port. The name will be different depending on type of operating system used. The name can also vary from time to time depending on what USB devices and eventual other equipment that is currently connected the computer.
+
+The procedure for finding out the current name of the ESP32 development board is based on the following steps. First you check available serial ports when the board is not plugged in. Then you connect your board to the computer by the use of an USB cable and recheck the available serial ports. On the second check so should it be an additional new serial port. It is this port that shall be used to when transferring data between the computer and the ESP32. 
 
 \chapter{Setting up Eclipse}
 
