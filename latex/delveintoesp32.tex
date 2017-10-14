@@ -271,13 +271,35 @@ The ESP development board will when connected to a your development computer sho
 
 We will need to know the name of the serial port. The name will be different depending on type of operating system used. The name can also vary from time to time depending on what USB devices and eventual other equipment that is currently connected the computer.
 
-The procedure for finding out the current name of the ESP32 development board is based on the following steps. First you check available serial ports when the board is not plugged in. Then you connect your board to the computer by the use of an USB cable and recheck the available serial ports. On the second check so should it be an additional new serial port. It is this port that shall be used to when transferring data between the computer and the ESP32. 
+The procedure for finding out the current name of the ESP32 development board is based on the following steps. First you check available serial ports when the board is not plugged in. Then you connect your board to the computer by the use of an USB cable and recheck the available serial ports. On the second check so should there be an additional new serial port. It is this port that shall be used to when transferring data between the computer and the ESP32.
+
+How to check for available serial ports is operating system dependent. On Ubuntu Linux so are the serial ports listed by the use of the following command.
+
+\begin{lstlisting}
+ls /dev/tty*
+\end{lstlisting}
+
+If you have a single ESP32 development board connected to a Linux computer so will its serial port most likely show up as follows.
+
+\begin{lstlisting}
+/dev/ttyUSB0
+\end{lstlisting}
+
+On a Macintosh computer so can the available serial ports be listed by the use of the following command.
+
+\begin{lstlisting}
+ls /dev/cu.*
+\end{lstlisting}
+
+In windows so is it for example possible to see the serial ports through the device manager. Search on-line for \textquote{How to check COM ports in Windows} if you need details for how this is done on your version of Windows.
+
+If you have not already followed the above step for finding out the name of the serial port that can be used to communicate with your development board so shall you do that know. Take a note of the name of the port since you will need it soon.
 
 \chapter{Setting up Eclipse}
 
 \marginnote{Eclipse is a very popular integrated development environment (IDE) used for computer programming. It contains a base workspace that is extensible by the use of a plug-in system. Eclipse may be used to develop applications written in many different programming languages including C and C++.}
 
-We have already learned how to build and download ESP32 projects using the command line. It also possible to use Eclipse to develop and build ESP32 projects. 
+We have already learned how to build and download ESP32 projects using the command line. It also possible to use Eclipse to develop and build ESP32 projects.
 
 \chapter{Bluetooth}
 
