@@ -175,9 +175,11 @@ Expected result from these commands are the following. A new folder called esp-i
 
 You should now stop reading and instead write down a note of the version of ESP-IDF that you are using and where it is located on your computer. You will need this information in the next section and also later on in this book when we will setup more software tools.
 
-\subsection{ESP-IDF Environment Path Setup os Ubuntu Linux}
+\subsection{ESP-IDF Environment Path Setup on Ubuntu Linux}
 
-\marginnote{As before so will it only be explained here how to setup things on Ubuntu Linux. Search on-line for ''Setup Path to ESP-IDF`` to get information on how to proceed on other operating systems}
+\marginnote{
+As before so will it only be explained here how to setup things on Ubuntu Linux. Search on-line for \textquote{Setup Path to ESP-IDF} to get information on how to proceed on other operating systems.
+}
 
 The tool chain, that eventually will build our projects, must be able to locate the ESP-IDF. This is done by setting up a an environment variable called IDF\_PATH. This variable will point at the location on your computer where you have chosen to store ESP-IDF.
 
@@ -267,13 +269,13 @@ While such interfaces as Ethernet and USB send data as a serial stream, the term
 Serial port, in Wikipedia. Retrieved October 14, 2017. 
 }
 
-The ESP development board will when connected to a your development computer show up as a serial port. This serial port will be used for flashing the program that we will build into the ESP32. The same port will additionally be used by the ESP32 to send a Hello World! message to our computer, once all the build steps are completed that is.
+The ESP development board will when connected to a your development computer show up as a serial port. This serial port will initially be used for transferring the program that we will build into the ESP32. The same port will additionally be used by the ESP32 to send a Hello World! message to our computer, once all the build steps are completed that is.
 
 We will need to know the name of the serial port. The name will be different depending on type of operating system used. The name can also vary from time to time depending on what USB devices and eventual other equipment that is currently connected the computer.
 
 The procedure for finding out the current name of the ESP32 development board is based on the following steps. First you check available serial ports when the board is not plugged in. Then you connect your board to the computer by the use of an USB cable and recheck the available serial ports. On the second check so should there be an additional new serial port. It is this port that shall be used to when transferring data between the computer and the ESP32.
 
-How to check for available serial ports is operating system dependent. On Ubuntu Linux so are the serial ports listed by the use of the following command.
+How to check for available serial ports is operating system dependent. On Ubuntu Linux so are the serial ports listed by the use of the following commands.
 
 \begin{lstlisting}
 ls /dev/tty*
@@ -284,7 +286,7 @@ If you have a single ESP32 development board connected to a Linux computer so wi
 \begin{lstlisting}
 /dev/ttyUSB0
 \end{lstlisting}
-
+s
 On a Macintosh computer so can the available serial ports be listed by the use of the following command.
 
 \begin{lstlisting}
@@ -294,6 +296,40 @@ ls /dev/cu.*
 In windows so is it for example possible to see the serial ports through the device manager. Search on-line for \textquote{How to check COM ports in Windows} if you need details for how this is done on your version of Windows.
 
 If you have not already followed the above step for finding out the name of the serial port that can be used to communicate with your development board so shall you do that know. Take a note of the name of the port since you will need it soon.
+
+\subsection{Setting up Serial Port Rights in Linux}
+In Linux systems so must users that want to use a serial port have permission to do so. This is done by adding the logged in user to the dialout group by the use of the following command.
+
+\begin{lstlisting}
+sudo usremod -a -G dialout $USER
+\end{lstlisting}
+
+You must logout and login again for this change to take effect.
+
+\subsection{Introduction to Menuconfig}
+The ESP-IDF can be configured in different ways using a configuration utility called Espressif IoT Development Framework Configuration, also known as menuconfig.
+
+This tool can be used to configure what components thats shall be included in the build. Having less components included that are not used leaves more room for your own application.
+
+We shall use now use menuconfig to make sure that the Hello World project settings for the serial port is setup correctly. This will be done from a Terminal window. First navigate to the folder where you previously saved a copy of the Hello World project.
+
+\begin{lstlisting}
+cd ~/esp/hello_world
+\end{lstlisting}
+
+Now from within in this folder so shall menuconfig be run by the use of the following command.
+
+\begin{lstlisting}
+make menuconfig
+\end{lstlisting}
+
+The expected result from the above command is that a graphical user interface is started in the terminal that should look something like what can be seen in figure~ \ref{fig:menuconfig_shadowed}
+
+\begin{figure}
+	\includegraphics{menuconfig_shadowed.png}
+	\caption[ $n$.][6pt]{Start view of the menuconfig tool that is used to configure the ESP-IDF framework with project specific settings.}
+	\label{fig:menuconfig_shadowed}
+\end{figure}
 
 \chapter{Setting up Eclipse}
 
