@@ -18,7 +18,21 @@
    inkscape:version="0.92.2 (30a58d1, 2017-08-07)"
    sodipodi:docname="menu_config_shadowed.svg">
   <defs
-     id="defs2" />
+     id="defs2">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter1860"
+       x="-0.047938144"
+       width="1.0958763"
+       y="-0.080172414"
+       height="1.1603448">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="3.875"
+         id="feGaussianBlur1862" />
+    </filter>
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -53,11 +67,25 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <image
-       y="86.353874"
-       x="12.019639"
-       id="image893"
-       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtwAAAG2CAYAAABMLlHIAAAABHNCSVQICAgIfAhkiAAAABl0RVh0
+    <g
+       id="g1866"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600">
+      <rect
+         ry="0"
+         rx="0"
+         y="86.241371"
+         x="12.019643"
+         height="116"
+         width="194"
+         id="rect1470"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter1860)" />
+      <image
+         style="stroke-width:0.99867737"
+         width="194.00002"
+         height="116"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtwAAAG2CAYAAABMLlHIAAAABHNCSVQICAgIfAhkiAAAABl0RVh0
 U29mdHdhcmUAZ25vbWUtc2NyZWVuc2hvdO8Dvz4AACAASURBVHic7J13eFzVmbjfe+/0olGxLMmS
 e7cBY2JcaAGbGsySQAgbSkLYJOxuNkDKZndT2SRLsqQnkGx6IaEEwo8Qeu8x4IIbrrLcZHVper/3
 /v64I2lUZuaONJIsc97n8WPNzL3f+c53vnPOd0+70qqVK3TQASgrc+Nxu7DZrEiyhEAgEAgEAoFA
@@ -1090,8 +1118,9 @@ gVtERERExEQK3CIiIiIiJlLgFhERERExkQK3iIiIiIiJFLhFREREREykwC0iIiIiYiIFbhERERER
 Eylwi4iIiIiYyAbgmjy2jrshIiIiInL12Hm0guQof3YereD/AxfRsDDBIK73AAAAAElFTkSuQmCC
 
 "
-       preserveAspectRatio="none"
-       height="115.8875"
-       width="193.675" />
+         id="image893"
+         x="12.01964"
+         y="86.241371" />
+    </g>
   </g>
 </svg>

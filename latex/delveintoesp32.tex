@@ -1,5 +1,8 @@
 \documentclass{tufte-book}
 
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
 \usepackage{graphicx}
 \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
 \graphicspath{{graphics/}}
@@ -40,6 +43,9 @@
 
 \usepackage{url}
 
+\usepackage{textcomp}	% Adds support for arrows in the text
+\renewcommand{\textrightarrow}{$\rightarrow$}
+
 \title{Delve into ESP32}
 \author{Henrik Samuelsson}
 
@@ -47,11 +53,14 @@
 \maketitle
 
 \cleardoublepage
+
+\tableofcontents
+
 \chapter{Development Tools Setup}
 
 This chapter discusses hardware and software needed to have to be able to do the exercises and projects presented in this book. The best way to learn is by experimenting and trying real things by yourself as opposed to just reading theoretical background material or watching videos.
 
-A number of different components are required to complete all the projects presented in this book. If your budget is limited so will you be  able to do many of the projects with just a handful of components, and each one is not really expensive either.
+A number of different components are required to complete all the projects presented in this book. If your budget is limited so will you be able to do many of the projects with just a handful of components, and each one is not really expensive either.
 
 \section{Mandatory Hardware}\label{sec:hardware}
 The following things is a must if you really want to become familiar with the ESP32.
@@ -74,8 +83,8 @@ Hardware specs on the computer are really not high. Computer to be used should h
 A development board with an ESP32-WROOM module is considered mandatory to be able to test the programs that you will create. Espressif, the company behind the ESP32, have released a development board named ESP32-DevKitC that can be bought for about \$15. Do a web search and you should find several vendors that sell it on for example eBay or Amazon. It could also be so that your own favorite electronic components vendor have it in stock.
 
 There are also various variants of the official development board developed by third parties. The cheapest ones can primarily be found on Chinese on-line market places. This can be a way to save a little money but there will usually be a few weeks of waiting for the order to arrive if you do not live China.
-frame=tb,
-An USB cable is needed to connect the development board and your computer. Exact cable needed depends on the computer and what development board being used. USB A to micro USB is probably the type that you need. Check the ports of your computer and the connector on the development kit before buying.
+
+An USB cable is needed to connect the development board and your computer. Exact cable needed depends on the computer and what development board being used. USB A to micro USB is probably the type that you need. Check the ports of your computer and the connector on the development kit before buying.n
 
 \subsection{Bread Board}
 Many of the projects requires various electronic components to be connected together. A fast way to hook up components is by using so called bread boards. Bread board comes in various colors and sizes see below picture for an example of a board with 830 connection points.
@@ -86,14 +95,14 @@ Many of the projects requires various electronic components to be connected toge
 	\label{fig:bread_board}
 \end{figure}
 
-The ESP32-DevKitC is bread board friendly and can be plugged in to the bread board directly. But it is fairly wide and will cover many connection points that we will want to have free to be able to connect other things. The solution is to have multiple boards connected together by the same principle used as when laying a jigsaw puzzle. Notice the three small knobs on the bottom of the board in the picture these will fit holes located at backside of the the top of the board. The board you want to have should be of this type that can be connected together with other boards. So search for a ''830 bread board`` that is specified to be able to be connected together and buy two off these boards. 
+The ESP32-DevKitC is bread board friendly and can be plugged in to the bread board directly. But it is fairly wide and will cover many connection points that we will want to have free to be able to connect other things. The solution is to have multiple boards connected together by the same principle used as when laying an jigsaw puzzle. Notice the three small knobs on the bottom of the board in the picture these will fit holes located at backside of the the top of the board. The board you want to have should be of this type that can be connected together with other boards. So search for a ''830 bread board`` that is specified to be able to be connected together and buy two off these boards. 
 
 An alternative is to search for ''1660 bread board`` and you will get hits were two bread boards are already mounted together for you on a metal plate.
 
 Choose either one of these two options but make sure that the bread boards have gotten good reviews by other users because there are a lot of products out there that works less well. 
 
 \subsection{Electronic Components}
-A basic supply of electronic components will be needed for the projects. The components can be bought as separate units but it is easier and usually cheaper to buy a complete kit. There are starter kits, sufficient for our needs, that can be bought for around \$15. These kits can be found at the same places where you buy your ESP32 development kit. Search for ``Arduino starter kit'' or ``bread board starter kit''. Note that the the kit does not need to contain an actual Arduino micro controller, the ESP32 will play the role as the controller in our projects.
+A basic supply of electronic components will be needed for the projects. The components can be bought as separate units but it is easier and usually cheaper to buy a complete kit. There are starter kits, sufficient for our needs, that can be bought for around \$15. These kits can be found at the same places where you buy your ESP32 development kit. Search for \textquote{Arduino starter kit} or \textquote{bread board starter kit}. Note that the the kit does not need to contain an actual Arduino micro controller, the ESP32 will play the role as the controller in our projects.
 
 The following list summarizes some of the components that should be included in your collection of electronic components.
 
@@ -101,7 +110,7 @@ The following list summarizes some of the components that should be included in 
 	\item Jumper wires
 	\item Dupont wires
 	\item An assortment of different resistors
-	\item Some different ceramic and electrolytic capacitors
+	\item Some different ceramic and electronlytic capacitors
 	\item Push buttons
 	\item LED's in some different colors 
 	\item Potentiometer
@@ -110,8 +119,8 @@ The following list summarizes some of the components that should be included in 
 \section{Software}\label{sec:software}
 
 The process of getting the ESP32 to run our own software depends on the steps and building blocks illustrated in figure~\ref{fig:software_anatomy}.
-But there is also pre-built tool chains that comes as a binary file. The latter is recommended for beginners that just want to get started as fast as possible.
-The very basic foundation of our software will be some packages that we must have on our development computer. On top op these packages so is there a library of ESP32 specific code provided by Espressif. This library is called Espressif Internet of Things Development Framework (ESP-IDF). This library abstracts away some of the hardware specific details and speeds up the development. The final piece of code that can be seen in figure~\ref{fig:software_anatomy} is labeled Our code and this will be project specific code written by us to make the ESP32 do what we want it to do.
+
+The very basic foundation of our software will be some packages that we must have on our development computer. On top of these packages so is there a library of ESP32 specific code provided by Espressif. This library is called Espressif Internet of Things Development Framework (ESP-IDF). This library abstracts away some of the hardware specific details and speeds up the development. The final piece of code that can be seen in figure~\ref{fig:software_anatomy} is labeled Our code and this will be project specific code written by us to make the ESP32 do what we want it to do.
 
 When we are done writing a part of our code and shall test it so will we first build a binary file, this is done by running programs and scripts from a set of tools refereed to as the tool chain. A binary file will be the result of an successful build. This binary shall finally be download to a ESP32 and if we have written to code correctly so will the ESP32 start executing the code and start to behave as we intended. 
 
@@ -126,11 +135,12 @@ When we are done writing a part of our code and shall test it so will we first b
 
 \subsection{Software Installation}
 Exact way to install the software needed to be able to build for the ESP32 depends on what operating system your development computer is running.
-Only installation instructions for Ubuntu Linux is provided in this book as an illustrative example. Instructions for all supported operating systems including Ubuntu Linux can be found by searching on-line for ''Espressif ESP32 installations instructions``.
+Only installation instructions for Ubuntu Linux is provided in this book as an illustrative example. Instructions for all supported operating systems including Ubuntu Linux can be found by searching on-line for \textquote{Espressif ESP32 installations instructions}.
+
 Even if you choose to follow the software installations instructions that can be found on-line so is it a good idea to glance through the instructions in the sections that now follow since there are, aside from the Ubuntu specific instructions, some general useful information that is valid for all installations regardless of the underlying operating system.
 
 \subsection{General Software Packages Installation on Ubuntu Linux}
-There are, as already discussed, a number of software packages that are needed to be able to program an ESP32. Make sure that all of these are available by opening a terminal window and execute the following command. 
+There are, as already discussed, a number of software packages that are needed to be able to program an ESP32. Make sure that all of these are available by opening a terminal window and execute the following command.
 	
 \begin{lstlisting}
 sudo apt-get install git
@@ -163,7 +173,7 @@ The latest current release, at the time of writing, is version 2.1. To get this 
 \begin{lstlisting}
 git clone \
 https://github.com/espressif/esp-idf.git \
-esp-idf-v2.1
+esp-idf-v2.1\ 
 cd esp-idf-v2.1/
 git checkout v2.1
 git submodule update --init --recursive
@@ -201,7 +211,7 @@ After logging back on to the computer so can you check that the new environment 
 printenv IDF_PATH
 \end{lstlisting}
 
-Expected result is that the path to the location of the ESP-IDF files is printed out in the terminal.
+Expected result is that the path to the location of the ESP-IDF files is printed out in the terminal.\renewcommand{\textuparrow}{$\uparrow$}
 
 \subsection{Tool Chain Setup on Ubuntu Linux}
 
@@ -211,7 +221,7 @@ Toolchain, in Wikipedia. Retrieved September 17, 2017. }
 
 We have now got significant parts of the things that we need to be able to build our own software for the ESP32. Go back and have a look at figure~\ref{fig:software_anatomy} at page~\pageref{fig:software_anatomy} again. We have the packages and ESP-IDF now. But one of the things that are still missing is the tool chain.
 
-The nice people at Espressif have provided us with a ready made tool chain for the ESP32 that we can download for free as a binary file. It is possible for more advanced user to build and tweak the tool chain by themselves. It is recommended for beginners that just want to get started as fast as possible to use the prebuilt version of the tool chain.
+The people at Espressif have provided us with a ready made tool chain for the ESP32 that we can download for free as a binary file. It is possible for more advanced user to build and tweak the tool chain by themselves. It is recommended for beginners that just want to get started as fast as possible to use the prebuilt version of the tool chain.
 
 The exact tool chain to use is dependent on the operating system that your computer runs. This means that you shall navigate the Espressif installation instruction pages to find a tool chain for your particular operating system.
 
@@ -223,7 +233,7 @@ The tool chain comes as in a packed file and we choose to extract the content in
 
 \begin{figure}
 	\includegraphics{tool_chain_folder_shadowed.png}
-	\caption[ $n$.][6pt]{The folder xtensa-esp32-elf holds the tool chain. Both this folder and the esp-idf folder have been placed in a folder called esp.}
+	\caption[ $n$.][6pt]{The folder xtensa-esp32-elf holds the tool chain. Both this folder and the ESP-IDF folder have been placed in a folder called esp.}
 	\label{fig:tool_chain_folder_shadowed}
 \end{figure}
 
@@ -259,7 +269,7 @@ cd ~/esp
 cp -r $IDF_PATH/examples/get-started/hello_world .
 \end{lstlisting}
 
-\subsection{Serial Port Identification}
+\subsection{Serial Port Identification} \label{sec:serial}
 
 \marginnote{
 A serial port is a communication interface through which information transfers in or out one bit at a time. Throughout most of the history of personal computers, data was transferred through serial ports to devices such as modems, terminals, and various peripherals.
@@ -323,7 +333,7 @@ Now from within in this folder so shall menuconfig be run by the use of the foll
 make menuconfig
 \end{lstlisting}
 
-The expected result from the above command is that a graphical user interface is started in the terminal that should look something like what can be seen in figure~ \ref{fig:menuconfig_shadowed}
+The expected result from the above command is that a graphical user interface is started in the terminal that should look something like what can be seen in figure~\ref{fig:menuconfig_shadowed}
 
 \begin{figure}
 	\includegraphics{menuconfig_shadowed.png}
@@ -331,9 +341,48 @@ The expected result from the above command is that a graphical user interface is
 	\label{fig:menuconfig_shadowed}
 \end{figure}
 
+Using the mouse is not supported in menuconfig tool, navigation around among the different options in menuconfig tool is handled by the use of the keyboard. There are instructions included for how this is done in the tool itself.
+
+\marginnote{
+Not all ESP32 development boards runs at the same speed. A common speed is 40 MHz but some boards will be clocked at 26 MHz. This depends on what type of crystal that is mounted on the development board. If you get garbage as output when eventually running the Hello World project so can this be because the speed is set incorrectly. You can then try to adjust the speed in menuconfig. See Component config \textrightarrow ESP32-specific \textrightarrow ESP32\_XTAL\_FREQ\_SEL.
+}
+Navigate to Serial flasher config \textrightarrow Default serial port. Set this setting to the name of the serial port used for your ESP development board. Then use the save option followed by exit and you should now be back in the ordinary terminal window.
+
+Expected result is that there now is a file called sdkconfig in your personal Hello World project folder. This is a human readable text file and if you want to double check your settings so can it be opened in a text editor. It is the flag called CONFIG\_ESPTOOLPY\_PORT in this file that controls what serial port will be used for sending down the application into the ESP32.
+
+\subsection{Building the Application}
+We have done a lot of things now good work if you have been able to follow along this far, we are almost done with the setup now.
+
+It is time to build the actual Hello World application. You shall as before be in a terminal window and be inside the Hello World folder. Also make sure that you have your development kit connected by the USB cable so that it is powered up and ready for receiving the binary that we will soon load into the ESP32.
+
+\marginnote{
+Flash memory is a non-volatile type of memory that can be electrically erased and then written to. There is such a memory in the ESP32. Writing to this type of memory is often referred to as flashing.  
+}
+
+We will run a command that will cause both build an write of the program into to the ESP32. Execute the following command in the terminal.
+
+\begin{lstlisting}
+make flash
+\end{lstlisting}
+
+Expected result of this command is that the application is built, if this has not already been done. And then written down into to the ESP32.
+The output from the command should look something like what can be seen in figure~\ref{fig:hello_world_make_flash_shadowed}
+
+\begin{figure}
+	\includegraphics{hello_world_make_flash_shadowed.png}
+	\caption[ $n$. ][6pt]{Screen dump from a successful build and flash procedure}
+	\label{fig:hello_world_make_flash_shadowed}
+\end{figure}
+
+The code for the Hello World project should now be running in the ESP32 but nothing really seems to happen. This is because the Hello World message is printed out on the serial port and we will need to run a special terminal program on our development computer to see the output. How to do this is discussed in the next section.
+
+\subsection{Looking at Serial Port Output}
+
 \chapter{Setting up Eclipse}
 
-\marginnote{Eclipse is a very popular integrated development environment (IDE) used for computer programming. It contains a base workspace that is extensible by the use of a plug-in system. Eclipse may be used to develop applications written in many different programming languages including C and C++.}
+\marginnote{
+Eclipse is a very popular integrated development environment (IDE) used for computer programming. It contains a base workspace that is extensible by the use of a plug-in system. Eclipse may be used to develop applications written in many different programming languages including C and C++.
+}
 
 We have already learned how to build and download ESP32 projects using the command line. It also possible to use Eclipse to develop and build ESP32 projects.
 
