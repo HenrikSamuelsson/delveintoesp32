@@ -58,9 +58,15 @@
 
 \chapter{Development Tools Setup}
 
-This chapter discusses hardware and software needed to have to be able to do the exercises and projects presented in this book. The best way to learn is by experimenting and trying real things by yourself as opposed to just reading theoretical background material or watching videos.
+This chapter discusses hardware and software needed to have to be able to do 
+the exercises and projects presented in this book. The best way to learn is by 
+experimenting and trying real things by yourself as opposed to just reading 
+theoretical background material or watching videos.
 
-A number of different components are required to complete all the projects presented in this book. If your budget is limited so will you be able to do many of the projects with just a handful of components, and each one is not really expensive either.
+A number of different components are required to complete all the projects 
+presented in this book. If your budget is limited so will you be able to do 
+many of the projects with just a handful of components, and each one is not 
+really expensive either.
 
 \section{Mandatory Hardware}\label{sec:hardware}
 The following things is a must if you really want to become familiar with the ESP32.
@@ -75,19 +81,40 @@ The following things is a must if you really want to become familiar with the ES
 Each type of needed item is discussed more in detail in the following sections.
 
 \subsection{Development Computer}
-A computer running Linux, Windows or macOS is needed to build the software to be run on the ESP32. The bulk of the projects in this book have been developed and tested on a computer running Ubuntu 16.04, so this is the preferred operating system. Everything should, at least in theory, work under other operating system but the ride might not be as smooth.
+A computer running Linux, Windows or macOS is needed to build the software to 
+be run on the ESP32. The bulk of the projects in this book have been developed 
+and tested on a computer running Ubuntu 16.04, so this is the preferred 
+operating system. Everything should, at least in theory, work under other o
+perating system but the ride might not be as smooth.
 
-Hardware specs on the computer are really not high. Computer to be used should have one or two free USB ports. There must also be some free disk space for software development tools. Other than that so should pretty much anything work.
+Hardware specs on the computer are really not high. Computer to be used should 
+have one or two free USB ports. There must also be some free disk space for 
+software development tools. Other than that so should pretty much any computer 
+work.
 
 \subsection{ESP32 Development Kit}
-A development board with an ESP32-WROOM module is considered mandatory to be able to test the programs that you will create. Espressif, the company behind the ESP32, have released a development board named ESP32-DevKitC that can be bought for about \$15. Do a web search and you should find several vendors that sell it on for example eBay or Amazon. It could also be so that your own favorite electronic components vendor have it in stock.
+A development board with an ESP32-WROOM module is considered mandatory to be 
+able to test the programs that you will create. Espressif, the company behind 
+the ESP32, have released a development board named ESP32-DevKitC that can be 
+bought for about \$15. Do a web search and you should find several vendors that 
+sell it on for example eBay or Amazon. It could also be so that your own 
+favorite electronic components vendor have it in stock.
 
-There are also various variants of the official development board developed by third parties. The cheapest ones can primarily be found on Chinese on-line market places. This can be a way to save a little money but there will usually be a few weeks of waiting for the order to arrive if you do not live China.
+There are also various variants of the official development board developed by 
+third parties. The cheapest ones can primarily be found on Chinese on-line 
+market places. This can be a way to save a little money but there will usually 
+be a some weeks of waiting for the order to arrive if you do not live China.
 
-An USB cable is needed to connect the development board and your computer. Exact cable needed depends on the computer and what development board being used. USB A to micro USB is probably the type that you need. Check the ports of your computer and the connector on the development kit before buying.n
+An USB cable is needed to connect the development board and your computer. 
+Exact cable needed depends on the computer and what development board being 
+used. USB A to micro USB is probably the type that you need. Check the ports of 
+your computer and the connector on the development kit before buying.
 
 \subsection{Bread Board}
-Many of the projects requires various electronic components to be connected together. A fast way to hook up components is by using so called bread boards. Bread board comes in various colors and sizes see below picture for an example of a board with 830 connection points.
+Many of the projects requires various electronic components to be connected 
+together. A fast way to hook up components is by using so called bread boards. 
+Bread board comes in various colors and sizes see below picture for an example 
+of a board with 830 connection points.
 
 \begin{figure}
 	\includegraphics{bread_board.png}
@@ -95,22 +122,44 @@ Many of the projects requires various electronic components to be connected toge
 	\label{fig:bread_board}
 \end{figure}
 
-The ESP32-DevKitC is bread board friendly and can be plugged in to the bread board directly. But it is fairly wide and will cover many connection points that we will want to have free to be able to connect other things. The solution is to have multiple boards connected together by the same principle used as when laying an jigsaw puzzle. Notice the three small knobs on the bottom of the board in the picture these will fit holes located at backside of the the top of the board. The board you want to have should be of this type that can be connected together with other boards. So search for a ''830 bread board`` that is specified to be able to be connected together and buy two off these boards. 
+The ESP32-DevKitC is bread board friendly and can be plugged in to the bread 
+board directly. But it is fairly wide and will cover many connection points 
+that we will want to have free to be able to connect other things. 
+The solution is to have multiple boards connected together by the same 
+principle used as when laying an jigsaw puzzle. Notice the three small knobs on 
+the bottom of the board in the picture these will fit holes located at backside 
+of the the top of the board. The board you want to have should be of this type 
+that can be connected together with other boards. So search for a
+\textquote{830 bread board} that is specified to be able to be connected
+together and buy two off these boards.
 
-An alternative is to search for ''1660 bread board`` and you will get hits were two bread boards are already mounted together for you on a metal plate.
+An alternative is to search for ''1660 bread board`` and you will get hits were 
+two bread boards are already mounted together for you on a metal plate.
 
-Choose either one of these two options but make sure that the bread boards have gotten good reviews by other users because there are a lot of products out there that works less well. 
+Choose either one of the two options fram above but make sure that the bread
+boards have gotten good reviews by other users. There are a lot of 
+products out there that works less well and will cause frustration both when 
+connecting the components and when running the programs that might behave 
+strange if the electrical connections between are glitchy.
 
 \subsection{Electronic Components}
-A basic supply of electronic components will be needed for the projects. The components can be bought as separate units but it is easier and usually cheaper to buy a complete kit. There are starter kits, sufficient for our needs, that can be bought for around \$15. These kits can be found at the same places where you buy your ESP32 development kit. Search for \textquote{Arduino starter kit} or \textquote{bread board starter kit}. Note that the the kit does not need to contain an actual Arduino micro controller, the ESP32 will play the role as the controller in our projects.
+A basic supply of electronic components will be needed for the projects. 
+The components can be bought as separate units but it is easier and usually 
+cheaper to buy a complete kit. There are starter kits, sufficient for our 
+needs, that can be bought for around \$15. These kits can be found at the same 
+places where you buy your ESP32 development kit. Search for 
+\textquote{Arduino starter kit} or \textquote{bread board starter kit}. 
+Note that the the kit does not need to contain an actual Arduino micro 
+controller, the ESP32 will play the role as the controller in our projects.
 
-The following list summarizes some of the components that should be included in your collection of electronic components.
+The following list summarizes some of the components that should be included in 
+your collection of electronic components.
 
 \begin{itemize}
 	\item Jumper wires
 	\item Dupont wires
 	\item An assortment of different resistors
-	\item Some different ceramic and electronlytic capacitors
+	\item Some different ceramic and electrolytic capacitors
 	\item Push buttons
 	\item LED's in some different colors 
 	\item Potentiometer
