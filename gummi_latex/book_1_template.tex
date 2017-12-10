@@ -88,6 +88,22 @@
 % Command to insert a blank page
 \newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
 
+\usepackage[T1]{fontenc}
+\usepackage{beramono}
+% Use for listing source code and console content
+\usepackage{listings}
+\lstset{
+  showstringspaces=false,
+  formfeed=\newpage,
+  tabsize=4,
+  aboveskip=10pt,
+  belowskip=10pt,
+  basicstyle=\ttfamily,
+}
+
+\lstdefinestyle{CStyle} {language=C,frame=lines}
+\lstdefinestyle{ConsoleStyle} {frame=single}
+
 % Used to generate the index
 \usepackage{makeidx}
 % Generate the index which is printed at the end of the document
@@ -172,14 +188,39 @@ Dedicated to my family and friends.
 \vfill
 
 %----------------------------------------------------------------------------------------
-%	INTRODUCTION
+%	PREFACE
 %----------------------------------------------------------------------------------------
 
 \cleardoublepage
-\chapter*{Introduction} % The asterisk leaves out this chapter from the table of contents
+\chapter*{Preface} % The asterisk leaves out this chapter from the table of contents
 
-Citation example \cite{Tufte2001}, notice how the citation is in the margin. This is an 
-example of how to add something to the index at the end of the document.\index{citation}
+\section{Conventions}
+The following typographical conventions are used in this book.
+
+\subsection{Easy to Read Running Text}
+The normal text is intentionally typeset in a slightly more narrow width than many
+other books. This choice i based on the belief that most readers will prefer this
+due to it making the text easy for the eyes to read.
+
+\subsection{Margin Notes}
+Margin notes are used extensively throughout the book. The material presented in the 
+margins is usually something that is not considered concern the majority of the readers.
+Can be background material that most of the readers are already expected to be familiar
+with. Can also be special cases that only concerns readers with a special type of 
+computer setup. For example a note about something that shall be done if the reader
+uses a certain type of operating system. 
+
+\subsection{Terminal Content}
+Terminal window content is displayed in a mono spaced font inside
+a frame like in the example below. This style is used to display
+terminal output as well as for displaying commands that the reader 
+shall enter into a terminal console window.
+
+\begin{lstlisting}[style=ConsoleStyle]
+sudo apt-get install git
+\end{lstlisting} 
+
+
 
 %------------------------------------------------
 
