@@ -20,31 +20,62 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass{tufte-book} % Use the tufte-book class which in turn uses the tufte-common class
+% Use the tufte-book class which in turn uses the tufte-common class
+\documentclass{tufte-book}
 
-\hypersetup{colorlinks} % Comment this line if you don't wish to have colored links
+% Comment this line if you don't wish to have colored links
+%\hypersetup{colorlinks}
 
-\usepackage{microtype} % Improves character and word spacing
+% Improves character and word spacing
+\usepackage{microtype}
 
-\usepackage{lipsum} % Inserts dummy text
+% Inserts dummy text
+\usepackage{lipsum}
 
-\usepackage{booktabs} % Better horizontal rules in tables
+% Better horizontal rules in tables
+\usepackage{booktabs}
 
-\usepackage{graphicx} % Needed to insert images into the document
-\graphicspath{{graphics/}} % Sets the default location of pictures
-\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio} % Improves figure scaling
+% Use to insert images into the document
+\usepackage{graphicx}
+% Sets the default location of images
+\graphicspath{{graphics/}}
 
-\usepackage{fancyvrb} % Allows customization of verbatim environments
-\fvset{fontsize=\normalsize} % The font size of all verbatim text can be changed here
+% Improves figure scaling
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
 
-\newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}} % New command to create parentheses around text in tables which take up no horizontal space - this improves column spacing
-\newcommand{\hangstar}{\makebox[0pt][l]{*}} % New command to create asterisks in tables which take up no horizontal space - this improves column spacing
+% Allows customization of verbatim environments
+\usepackage{fancyvrb}
+% The font size of all verbatim text can be changed here
+\fvset{fontsize=\normalsize}
 
-\usepackage{xspace} % Used for printing a trailing space better than using a tilde (~) using the \xspace command
+% New command to create parentheses around text in tables which take up no
+% horizontal space, this improves column spacing
+\newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}}
+% New command to create asterisks in tables which take up no horizontal
+% space, this improves column spacing
+\newcommand{\hangstar}{\makebox[0pt][l]{*}}
 
-\newcommand{\monthyear}{\ifcase\month\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\space\number\year} % A command to print the current month and year
+% Used for printing a trailing space better than using a tilde (~)
+% using the \xspace command
+\usepackage{xspace}
 
-\newcommand{\openepigraph}[2]{ % This block sets up a command for printing an epigraph with 2 arguments - the quote and the author
+% A command to print the current month and year
+\newcommand{\monthyear}{\ifcase\month
+\or January
+\or February
+\or March
+\or April
+\or May
+\or June
+\or July
+\or August
+\or September
+\or October
+\or November
+\or December\fi\space\number\year}
+
+% Command for printing an epigraph with 2 arguments - the quote and the author
+\newcommand{\openepigraph}[2]{
 \begin{fullwidth}
 \sffamily\large
 \begin{doublespace}
@@ -54,20 +85,23 @@
 \end{fullwidth}
 }
 
-\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage} % Command to insert a blank page
+% Command to insert a blank page
+\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
 
-\usepackage{makeidx} % Used to generate the index
-\makeindex % Generate the index which is printed at the end of the document
+% Used to generate the index
+\usepackage{makeidx}
+% Generate the index which is printed at the end of the document
+\makeindex
 
 %----------------------------------------------------------------------------------------
 %	BOOK META-INFORMATION
 %----------------------------------------------------------------------------------------
 
-\title{Book Title} % Title of the book
+\title{Book Title}
 
-\author{John Smith} % Author
+\author{John Smith}
 
-\publisher{Publisher Name} % Publisher
+\publisher{Publisher Name}
 
 %----------------------------------------------------------------------------------------
 
@@ -144,9 +178,8 @@ Dedicated to my family and friends.
 \cleardoublepage
 \chapter*{Introduction} % The asterisk leaves out this chapter from the table of contents
 
-Citation example \cite{Tufte2001}, notice how the citation is in the margin. This is an example of how to add something to the index at the end of the document.\index{citation}
-
-\newthought{Example of} the \texttt{newthought} command for starting new sections. Typography examples: \allcaps{all caps} and \smallcaps{small caps}.
+Citation example \cite{Tufte2001}, notice how the citation is in the margin. This is an 
+example of how to add something to the index at the end of the document.\index{citation}
 
 %------------------------------------------------
 
@@ -156,7 +189,9 @@ Citation example \cite{Tufte2001}, notice how the citation is in the margin. Thi
 
 \begin{marginfigure}
 \includegraphics[width=\linewidth]{helix}
-\caption{This is a margin figure. The helix is defined by $x = \cos(2\pi z)$, $y = \sin(2\pi z)$, and $z = [0, 2.7]$. The figure was drawn using Asymptote (\url{http://asymptote.sf.net/}).}
+\caption{This is a margin figure. The helix is defined by 
+$x = \cos(2\pi z)$, $y = \sin(2\pi z)$, and $z = [0, 2.7]$. The figure was drawn using
+ Asymptote (\url{http://asymptote.sf.net/}).}
 \label{fig:marginfig}
 \end{marginfigure}
 
