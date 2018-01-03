@@ -43,7 +43,8 @@
 
 \usepackage{url}
 
-\usepackage{textcomp}	% Adds support for arrows in the text
+% Used to be able to have arrows in the text
+\usepackage{textcomp}	
 \renewcommand{\textrightarrow}{$\rightarrow$}
 
 \title{Delve into ESP32}
@@ -55,6 +56,26 @@
 \cleardoublepage
 
 \tableofcontents
+
+\chapter{Introduction to ESP32}
+
+\section{Micro-controllers}
+A micro-controller is a type of computer, albeit in mini format and 
+with very much reduced performance compared to an ordinary desktop or laptop 
+computer. 
+
+Micro-controllers are often embedded into products and might not have 
+any user interface to control them at all. They are then simply started up when 
+the device is powered up and will do their work quietly behind the scenes. 
+Sometimes there will be a few buttons and maybe a buzzer or a small simple 
+display connected to the micro-controller that serves as an user interface.
+
+Common usage for micro-controllers is to have them in household appliances, 
+cars, toys, headphones, health care equipment, home automation systems, robots, 
+cameras, power tools. This list just goes on and on. During a normal day so 
+will a person be serviced by at least a dozen different micro-controllers 
+without really thinking about this at all.  
+
 
 \chapter{Development Tools Setup}
 
